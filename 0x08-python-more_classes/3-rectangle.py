@@ -49,12 +49,11 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        ''' return a format shape for a rectangle '''
         if self.width == 0 or self.height == 0:
             return ""
-        result = ""
+        rect = ""
         for i in range(self.height):
-            for j in range(self.width):
-                result += "#"
-            result += "\n"
-        return result
+            rect += '#' * self.width
+            if i != self.height - 1:
+                rect += '\n'
+        return rect
