@@ -3,11 +3,13 @@ import sys
 
 
 def is_safe(board, row, col, N):
+    ''' check if a queen can be placed on board[row][col] '''
     for i in range(col):
         if board[row][i] == 1:
             return False
 
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
+        ''' check upper diagonal on left side '''
         if board[i][j] == 1:
             return False
 
@@ -18,6 +20,7 @@ def is_safe(board, row, col, N):
 
 
 def solve_n_queens(board, col, N):
+    ''' solve n queens '''
     if col >= N:
         print_solution(board, N)
         return True
@@ -32,6 +35,7 @@ def solve_n_queens(board, col, N):
 
 
 def print_solution(board, N):
+    ''' print the solution '''
     queens = []
     for i in range(N):
         for j in range(N):
@@ -41,6 +45,7 @@ def print_solution(board, N):
 
 
 def nqueens(N):
+    ''' n queens '''
     if not isinstance(N, int):
         print("N must be a number")
         sys.exit(1)
