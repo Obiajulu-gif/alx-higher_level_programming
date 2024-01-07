@@ -9,7 +9,7 @@ def add_integer(a, b=98):
 
     Raises:
     -  TypeError: If a or b is not an integer or float
-
+    
     Returns:
     - an integer: the addition of a and b.
     """
