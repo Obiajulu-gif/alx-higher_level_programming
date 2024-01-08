@@ -1,0 +1,36 @@
+#Test cases for print_square function
+
+>>> print_square = __import__('4-print_square').print_square
+
+
+#Test case 1: check that the parameter size is a int
+>>> size = 4
+
+>>> print_square(size)
+####
+####
+####
+####
+
+#Test case 2: print error if the parameter size is not int
+>>> size = "Emmanuel"
+
+>>> print_square(size)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+#Test case 3: check if size is negative
+>>> size = -1
+>>> print_square(size)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+#Test case 4: check if size is a float
+>>> size = 2.0
+>>> print_square(size)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
