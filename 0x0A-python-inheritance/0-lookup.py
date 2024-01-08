@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" lookup module determines the attributes and methods of an object."""
 
 
 def lookup(obj):
