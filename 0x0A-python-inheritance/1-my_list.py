@@ -1,10 +1,19 @@
 #!/usr/bin/python3
-"""class that print a list and sort it out"""
-
+"""
+Module that defines the MyList class.
+"""
 
 class MyList(list):
-    """class that print a list and sort it out"""
+    """
+    A custom list class that provides additional functionality.
+
+    Methods:
+        print_sorted: Prints the list in sorted order.
+    """
 
     def print_sorted(self):
-        """print_sorted - prints list in sorted manner in ascending order"""
-        return print(sorted(self, reverse=False))
+        """
+        Prints the list in sorted order.
+        """
+        sorted_list = sorted(self)
+        print(sorted_list)
