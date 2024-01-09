@@ -8,4 +8,4 @@ class MyList(list):
         super().__init__()
 
     def print_sorted(self):
-        return print(sorted(self))
+        return print(sorted(self, reverse=False))
