@@ -13,4 +13,3 @@ Adding elements to list:
 >>> my_list.append(5)
 >>> my_list
 [1, 4, 2, 3, 5]
-
