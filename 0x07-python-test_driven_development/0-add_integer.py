@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """function to add integer"""
 
+
 def add_integer(a, b=98):
     """
     Adds two integers.
@@ -11,7 +12,7 @@ def add_integer(a, b=98):
 
     Raises:
     -  TypeError: If a or b is not an integer or float
-    
+
     Returns:
     - an integer: the addition of a and b.
     """
