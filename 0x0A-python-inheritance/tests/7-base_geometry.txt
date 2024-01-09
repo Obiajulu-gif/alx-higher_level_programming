@@ -7,7 +7,7 @@ module import:
 create an instance
 >>> bg = BaseGeometry()
 
-Value is not integer:
+Value is not an integer:
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
 ...
@@ -32,29 +32,29 @@ Value is None:
 >>> bg.integer_validator("Jason", None)
 Traceback (most recent call last):
 ...
-TypeError: Jason must be an integer
+TypeError: must be an integer
 
 One argument is passed:
 >>> bg.integer_validator("Jason")
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 >>> bg.integer_validator(7)
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 No arguments are passed:
 >>> bg.integer_validator()
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 Argument value too large:
 >>> bg.integer_validator("Jason", float("inf"))
 Traceback (most recent call last):
 ...
-TypeError: Jason must be an integer
+TypeError: must be an integer
 
 >>> bg.area()
 Traceback (most recent call last):
