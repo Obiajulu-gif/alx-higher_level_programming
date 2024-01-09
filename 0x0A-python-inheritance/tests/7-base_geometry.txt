@@ -25,7 +25,7 @@ Traceback (most recent call last):
 ...
 ValueError: Jason must be greater than 0
 
-Name is empty string:
+Name is an empty string:
 >>> bg.integer_validator("", 89)
 
 Value is None:
@@ -44,13 +44,13 @@ Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
-No argument is passed:
+No arguments are passed:
 >>> bg.integer_validator()
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-Argument value too large
+Argument value too large:
 >>> bg.integer_validator("Jason", float("inf"))
 Traceback (most recent call last):
 ...
