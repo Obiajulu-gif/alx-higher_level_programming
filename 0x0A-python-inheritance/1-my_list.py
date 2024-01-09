@@ -4,8 +4,7 @@
 
 class MyList(list):
     """class that print a list and sort it out"""
-    def __init__(self):
-        super().__init__()
 
     def print_sorted(self):
+        """print_sorted - prints list in sorted manner in ascending order"""
         return print(sorted(self, reverse=False))
