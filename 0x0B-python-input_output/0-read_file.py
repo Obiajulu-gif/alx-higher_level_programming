@@ -12,6 +12,6 @@ def read_file(filename=""):
     - Return all the text to the stdout
     """
 
-    with open(filename, "r", encoding="UTF8") as filedoc:
+    with open(filename, "r", encoding="utf-8") as filedoc:
         fp = filedoc.read()
-        print(fp)
+        print(fp, end='')
