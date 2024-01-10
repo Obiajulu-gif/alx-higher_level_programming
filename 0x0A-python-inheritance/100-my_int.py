@@ -2,22 +2,13 @@
 """class MyInt that inherits from int"""
 
 
-class MyInt:
-    """inherit the int class from the in-built int class"""
-    def __init__(self, value):
-        self.__value = value
+class MyInt(int):
+    """Class MyInt that inherits from int with inverted == and != operators"""
 
     def __eq__(self, other):
-        if self.__value == other:
-            return False
-        else:
-            return True
+        """Override == operator to return the inverted result"""
+        return super().__ne__(other)
 
     def __ne__(self, other):
-        if self.__value != other:
-            return False
-        else:
-            return True
-
-    def __str__(self):
-        return "{}".format(self.__value)
+        """Override != operator to return the inverted result"""
+        return super().__eq__(other)
