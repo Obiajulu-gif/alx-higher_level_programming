@@ -13,7 +13,7 @@ def load_from_json_file(filename):
 
     Returns:
         The object created
-    
+
     """
     with open(filename, encoding='utf-8') as f:
         return json.load(f)
