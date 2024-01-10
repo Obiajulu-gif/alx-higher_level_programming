@@ -4,18 +4,24 @@ and then save them to a file
 """
 
 
-import sys
 import json
-import os.path
+import sys
+from os import path
 
+def save_to_json_file(my_obj, filename):
+    with open(filename, 'w') as file:
+        json.dump(my_obj, file)
 
-filename = "add_item.json"
-my_list = []
+def load_from_json_file(filename):
+    with open(filename, 'r') as file:
+        return json.load(file)
 
-if os.path.isfile(filename):
-    my_list = json.load(open(filename))
+if __name__ == "__main__":
+    file_name = "add_item.json"
+    data = []
 
-for i in range(1, len(sys.argv)):
-    my_list.append(sys.argv[i])
+    if path.exists(file_name):
+        data = load_from_json_file(file_name)
 
-json.dump(my_list, open(filename, mode='w'))
+    data.extend(sys.argv[1:])
+    save_to_json_file(data, file_name)
