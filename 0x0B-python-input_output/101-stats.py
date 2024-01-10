@@ -1,15 +1,36 @@
 #!/usr/bin/python3
+"""101-stats.py - Reads stdin line by line and computes metrics
+"""
 import sys
 import signal
 
 
 def print_metrics(total_size, status_codes):
+    """Prints the metrics to stdout
+    
+    Arguments:
+        total_size {int} -- Total size of the file
+        status_codes {dict} -- Dictionary containing the status codes
+
+    Returns:
+        None
+    """
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
         print("{}: {}".format(code, status_codes[code]))
 
 
 def process_line(line, total_size, status_codes):
+    """Processes the line read from stdin
+
+    Arguments:
+        line {str} -- Line read from stdin
+        total_size {int} -- Total size of the file
+        status_codes {dict} -- Dictionary containing the status codes
+
+    Returns:
+        tuple -- Total size of the file and dictionary containing the status codes
+    """
     try:
         parts = line.split()
         size = int(parts[-1])
