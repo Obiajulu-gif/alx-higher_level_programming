@@ -2,7 +2,6 @@
 """101-stats.py - Reads stdin line by line and computes metrics
 """
 import sys
-import signal
 
 
 def print_metrics(total_size, status_codes):
@@ -42,7 +41,6 @@ def process_line(line, total_size, status_codes):
             status_codes[status_code] += 1
 
     except (ValueError, IndexError):
-        # Ignore lines with invalid format
         pass
 
     return total_size, status_codes
