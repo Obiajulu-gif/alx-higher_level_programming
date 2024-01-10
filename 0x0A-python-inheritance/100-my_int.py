@@ -9,15 +9,15 @@ class MyInt:
 
     def __eq__(self, other):
         if self.__value == other:
-            return False
-        else:
             return True
+        else:
+            return False
 
     def __ne__(self, other):
         if self.__value != other:
-            return False
-        else:
             return True
+        else:
+            return False
 
     def __str__(self):
         return "{}".format(self.__value)
