@@ -26,8 +26,9 @@ class Student:
         for key, value in class_dict.items():
             if isinstance(value, (bool, int, str, list, dict)):
                 class_dict[key] = value
-        if isinstance(attrs, list) and all(isinstance(attr, str) for attr 
+        if isinstance(attrs, list) and all(isinstance(attr, str) for attr
                                            in attrs):
-            class_dict = {key: value for key, value in class_dict.items() if key in attrs}
-                    
+            class_dict = {key: value for key, value in class_dict.items()
+                          if key in attrs}
+
         return class_dict
