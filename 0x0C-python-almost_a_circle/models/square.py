@@ -26,3 +26,19 @@ class Square(Rectangle):
         """Setter for the size attribute"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Assigns attribute based on the provided arguments
+        and keyword argument"""
+        if args:
+            attributes = ["id", "size", "x", "y"]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        attributes = ["id", "width", "height", "x", "y"]
+        return {key: getattr(self, key) for key in attributes}
