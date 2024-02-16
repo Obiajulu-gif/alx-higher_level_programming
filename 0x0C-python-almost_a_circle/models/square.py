@@ -42,3 +42,7 @@ class Square(Rectangle):
         """returns the dictionary representation of a Rectangle"""
         attributes = ["id", "width", "height", "x", "y"]
         return {key: getattr(self, key) for key in attributes}
+
+    def area(self):
+        """calculate the area of a square"""
+        return self.__size ** 2
