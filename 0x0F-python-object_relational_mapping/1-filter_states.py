@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all states with a name starting with N (upper N)
+"""Script that lists all state with a name starting with N (upper N)
 from the database"""
 
 if __name__ == '__main__':
