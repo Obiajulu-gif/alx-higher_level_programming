@@ -3,7 +3,19 @@
 import urllib.request
 import sys
 
-if __name__ == "__main__":
-    url = sys.argv[1]
+if len(sys.argv) != 2:
+    print("Usage: ./1-hbtn_header.py <URL>")
+    sys.exit(1)
+
+url = sys.argv[1]
+
+try:
     with urllib.request.urlopen(url) as response:
-        print(response.getheader('X-Request-Id'))
+        request_id = response.getheader('X-Request-Id')
+        if request_id:
+            print(request_id)
+        else:
+            print("X-Request-Id header not found in the response.")
+except urllib.error.URLError as e:
+    print("Error:", e.reason)
+    sys.exit(1)
