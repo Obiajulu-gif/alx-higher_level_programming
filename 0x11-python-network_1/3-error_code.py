@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Fetches a URL and displays the body of the response."""
-import urllib.request
-import urllib.error
-
+from urllib import request, error
 if __name__ == "__main__":
     import sys
 
