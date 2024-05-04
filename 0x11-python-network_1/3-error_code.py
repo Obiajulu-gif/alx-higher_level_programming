@@ -1,14 +1,21 @@
 #!/usr/bin/python3
-"""Fetches a URL and displays the body of the response."""
-from urllib import request, error
-if __name__ == "__main__":
-    import sys
+"""Error code #0"""
+import urllib.request
+import sys
 
-    url = sys.argv[1]
+if len(sys.argv) != 2:
+    print("Usage: ./3-error_code.py <URL>")
+    sys.exit(1)
 
-    try:
-        with urllib.request.urlopen(url) as response:
-            html = response.read()
-            print(html.decode('utf-8'))
-    except urllib.error.HTTPError as e:
-        print("Error code:", e.code)
+url = sys.argv[1]
+
+try:
+    with urllib.request.urlopen(url) as response:
+        body = response.read().decode('utf-8')
+        print(body)
+except urllib.error.HTTPError as e:
+    print(f"Error code: {e.code}")
+    sys.exit(1)
+except urllib.error.URLError as e:
+    print("Error:", e.reason)
+    sys.exit(1)
