@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Error code #0"""
+"""Error code message #0"""
 import urllib.request
 import sys
 
