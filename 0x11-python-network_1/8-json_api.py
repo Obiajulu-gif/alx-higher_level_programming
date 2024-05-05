@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that takes in a letter and sends a post request"""
+"""script that takes in a url"""
 import requests
 import sys
 
