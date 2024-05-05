@@ -1,24 +1,22 @@
 #!/usr/bin/python3
-"""script that takes in a letter
-and sends a post request"""
-
+"""script that takes in a letter and sends a post request"""
 import requests
 import sys
 
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        letter = ""
-    else:
-        letter = sys.argv[1]
-url = 'http://0.0.0.0:5000/search_user'
-payload = {'q': letter}
+if len(sys.argv) == 1:
+    q = ""
+else:
+    q = sys.argv[1]
 
-response = requests.post(url, data=payload)
+url = "http://0.0.0.0:5000/search_user"
+data = {'q': q}
+
+response = requests.post(url, data=data)
 
 try:
     result = response.json()
     if result:
-        print("[{}] {}".format(result.get('id'), result.get('name')))
+        print(f"[{result['id']}] {result['name']}")
     else:
         print("No result")
 except ValueError:
