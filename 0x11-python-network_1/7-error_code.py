@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""script that takes in a url"""
 import requests
 import sys
 
